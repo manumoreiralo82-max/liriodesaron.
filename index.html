@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lírio de Saron - Nosso Casamento</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:Georgia,serif;
+    background:#fdf8f0;
+    color:#4a3b32;
+    text-align:center;
+    -webkit-user-select:none;
+    user-select:none;
+    overflow-x:hidden;
+  }
+  img{-webkit-user-drag:none;pointer-events:none}
+  .envelope-tela{
+    min-height:100vh;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:20px;
+    background:linear-gradient(#f7ead9,#fdf8f0);
+  }
+  .envelope{
+    width:300px;height:200px;
+    background:#e8c99a;
+    border-radius:10px;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+  }
+  .envelope:before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,#f3d9ab,#e8c99a);
+    clip-path:polygon(0 0,100% 0,50% 55%);
+  }
+  .coracao{font-size:50px;position:absolute;top:70px;left:50%;transform:translateX(-50%)}
+  .convite{display:none;padding:30px 20px;max-width:600px;margin:0 auto}
+  h1{font-size:42px;color:#8a6a3b;margin:10px 0}
+  h2{font-weight:normal;font-style:italic;color:#a07d4a;margin-bottom:20px}
+  .verso{font-style:italic;line-height:1.7;margin:20px 0}
+  .data{background:#8a6a3b;color:white;padding:15px;border-radius:30px;display:inline-block;margin:15px 0}
+  .btn{
+    display:block;background:#8a6a3b;color:white;
+    padding:15px;border-radius:30px;
+    text-decoration:none;margin:12px auto;
+    max-width:320px;font-weight:bold
+  }
+  .btn2{background:#fff;color:#8a6a3b;border:2px solid #8a6a3b}
+  .foto{width:100%;max-width:400px;border-radius:15px;margin:15px 0}
+  footer{padding:20px;font-size:13px;opacity:.7}
+</style>
+</head>
+<body>
+
+<!-- TELA DO ENVELOPE -->
+<div class="envelope-tela" id="telaEnvelope" onclick="abrir()">
+  <div class="envelope"><div class="coracao">❤️</div></div>
+  <h1 style="margin-top:20px">Lírio de Saron</h1>
+  <p>Clique no envelope para abrir o convite</p>
+</div>
+
+<!-- CONVITE -->
+<div class="convite" id="convite">
+  <p>🌸 🌸 🌸</p>
+  <h1>Manu & Noivo</h1>
+  <h2>Vamos nos casar!</h2>
+
+  <p class="verso">"Eu sou o lírio de Saron, a rosa dos vales."<br>Cânticos 2:1</p>
+
+  <div class="data">📅 DATA: 00 / 00 / 2027<br>📍 Santo Antônio de Jesus - BA</div>
+
+  <!-- TROQUE O NOME DA FOTO AQUI -->
+  <img class="foto" src="foto1.jpg" alt="Nossa foto">
+
+  <p style="margin:15px 0">Será uma alegria ter você celebrando esse dia com a gente!</p>
+
+  <a class="btn" href="https://wa.me/5575000000000?text=Confirmo%20presen%C3%A7a%20no%20casamento!" target="_blank">✅ CONFIRMAR PRESENÇA</a>
+  <a class="btn btn2" href="#" onclick="alert('Chave Pix: SEU-PIX-AQUI')">💛 PRESENTEAR VIA PIX</a>
+
+  <p style="margin-top:20px;font-size:14px">Com amor,<br><b>Manu & Noivo</b></p>
+</div>
+
+<script>
+  function abrir(){
+    document.getElementById('telaEnvelope').style.display='none';
+    document.getElementById('convite').style.display='block';
+    window.scrollTo(0,0);
+  }
+  // PROTEÇÃO CONTRA CÓPIA
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if(e.key === 'F12' || (e.ctrlKey && e.key.toLowerCase() === 'u') || (e.ctrlKey && e.key.toLowerCase() === 'c')){
+      e.preventDefault();
+      alert('Conteúdo protegido!');
+    }
+  });
+</script>
+</body>
+</html>
